@@ -62,7 +62,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.a2dp.default
+#    audio.a2dp.default
 #    alsa.msm8960 \
 #    audio_policy.msm8960 \
 #    audio.primary.msm8960
