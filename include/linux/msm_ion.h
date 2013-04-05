@@ -148,8 +148,8 @@ enum cp_mem_usage {
  * @setup_region:	function to be called upon ion registration
  * @memory_type:Memory type used for the heap
  * @allow_nonsecure_alloc: allow non-secure allocations from this heap. For
- *      secure heaps, this flag must be set so allow non-secure
- *      allocations. For non-secure heaps, this flag is ignored.
+ *			secure heaps, this flag must be set so allow non-secure
+ *			allocations. For non-secure heaps, this flag is ignored.
  *
  */
 struct ion_cp_heap_pdata {
