@@ -14,6 +14,8 @@
     <string name="mdnie_outdoor_summary_head">屋外使用に合わせる</string>
     <string name="panel_gamma_title_head">スクリーンガンマ</string>
     <string name="panel_gamma_summary_head">スクリーンガンマ値を設定する</string>
+    <string name="panel_color_temp_title_head">色温度</string>
+    <string name="panel_color_temp_summary_head">画面を一旦オフにすることで適用されます</string>
 
     <string name="touchscreen_subcat_title">タッチスクリーン</string>
     <string name="touchscreen_sensitivity_title_head">タッチ感度</string>
@@ -33,6 +35,11 @@
 
     <string name="cabc_title_head">コンテンツ適応バックライト制御</string>
     <string name="cabc_summary_head">コンテンツ適応バックライト制御を有効にする</string>
+
+    <string name="category_haptic_title">振動フィードバック</string>
+    <string name="vibrator_subcat_title">バイブレーター</string>
+    <string name="vibrator_intensity_title_head">バイブレーター強度</string>
+    <string name="vibrator_intensity_summary_head">バイブレーター強度を設定する</string>
 
     <string name="category_sound_title">サウンド</string>
     <string name="sound_volume_title">ボリューム</string>
