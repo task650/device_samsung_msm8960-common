@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">高度な設定</string>
+    <string name="app_name">デバイス設定</string>
 
     <string name="screen_colors_title">カラー</string>
     <string name="category_mdnie_title">スクリーン</string>
@@ -24,17 +24,17 @@
     <string name="category_sensors_title">センサー</string>
     <string name="gyro_subcat_title">ジャイロスコープ</string>
     <string name="use_gyro_calibration_title_head">キャリブレーションデータを使用</string>
-    <string name="use_gyro_calibration_summary_head">ジャイロのキャリブレーション値を使用する。チェック後キャリブレーションしてください。</string>
+    <string name="use_gyro_calibration_summary_head">ジャイロのキャリブレーション値を使用、チェック後キャリブレーションしてください</string>
     <string name="calibrate_gyro_title_head">キャリブレーション</string>
-    <string name="calibrate_gyro_summary_head">電話機を水平なところに置いて、キャリブレーションする</string>
+    <string name="calibrate_gyro_summary_head">電話機を水平なところに置いて、キャリブレーション実施する</string>
     <string name="touchkey_subcat_title">タッチキー</string>
     <string name="touchkey_light_title_head">キーバックライトを有効</string>
     <string name="touchkey_light_summary_head">スクリーンオン時にタッチキーを点灯する</string>
     <string name="touchkey_bln_title_head">キー通知を有効</string>
     <string name="touchkey_bln_summary_head">スクリーンオフで通知を受信したときにタッチキーを点灯する</string>
 
-    <string name="cabc_title_head">コンテンツ適応バックライト制御</string>
-    <string name="cabc_summary_head">コンテンツ適応バックライト制御を有効にする</string>
+    <string name="cabc_title_head">CABC</string>
+    <string name="cabc_summary_head">コンテンツ適応バックライト制御(CABC)を有効にする</string>
 
     <string name="category_haptic_title">振動フィードバック</string>
     <string name="vibrator_subcat_title">バイブレーター</string>

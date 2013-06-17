@@ -31,4 +31,19 @@
         <item>100</item>
     </string-array>
 
+    <string-array name="vibrator_intensity_entries">
+        <item>0%</item>
+        <item>25%</item>
+        <item>50% (デフォルト)</item>
+        <item>75%</item>
+        <item>100%</item>
+    </string-array>
+
+    <string-array name="panel_color_temp_entries" >
+        <item>コールド</item>
+        <item>クール</item>
+        <item>ノーマル</item>
+        <item>ウォーム</item>
+        <item>ホット</item>
+    </string-array>
 </resources>
