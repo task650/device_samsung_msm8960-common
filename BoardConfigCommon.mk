@@ -65,10 +65,6 @@ WIFI_DRIVER_FW_PATH_STA     := "/system/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/system/etc/wifi/bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_P2P     := "/system/etc/wifi/bcmdhd_p2p.bin"
 
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-
 # NFC
 BOARD_HAVE_NFC := true
 
@@ -99,9 +95,6 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # We have the new GPS driver
 BOARD_HAVE_NEW_QC_GPS := true
-
-# Use CAF media driver variant for 8960
-TARGET_QCOM_MEDIA_VARIANT := caf
 
 # Use retire fence from MDP driver
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
