@@ -53,13 +53,17 @@ PRODUCT_PACKAGES += \
     memtrack.msm8960 \
     power.msm8960
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    e2fsck
+
 # DeviceSettings
 PRODUCT_PACKAGES += \
-     DeviceSettings
+    DeviceSettings
 
 # SamsungServiceMode
 PRODUCT_PACKAGES += \
-     SamsungServiceMode
+    SamsungServiceMode
 
 # Misc
 PRODUCT_PACKAGES += \
