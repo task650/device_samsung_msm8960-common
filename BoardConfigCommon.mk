@@ -27,10 +27,6 @@ TARGET_CPU_SMP := true
 # Flags
 COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
-ifneq ($(VARIENT_REQUIRE_3.0_KERNEL),true)
-COMMON_GLOBAL_CFLAGS += -DNEW_ION_API
-endif
-
 TARGET_CPU_VARIANT := krait
 
 # Adreno configuration
@@ -71,7 +67,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
-TARGET_PROVIDES_LIBLIGHT := true
+USE_DEVICE_SPECIFIC_LIBLIGHT := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
