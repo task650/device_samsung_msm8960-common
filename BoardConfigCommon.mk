@@ -29,9 +29,6 @@ COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64 -DNEW_ION_API
 
 TARGET_CPU_VARIANT := krait
 
-# Adreno configuration
-BOARD_EGL_CFG := device/samsung/msm8960-common/configs/egl.cfg
-
 # Wifi related defines
 WIFI_BAND := 802_11_ABG
 WPA_SUPPLICANT_VERSION := VER_0_8_X
