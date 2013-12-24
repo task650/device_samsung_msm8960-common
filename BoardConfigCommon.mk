@@ -67,7 +67,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
-USE_DEVICE_SPECIFIC_LIBLIGHT := true
+TARGET_PROVIDES_LIBLIGHT := true
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
