@@ -66,10 +66,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DeviceSettings
 
-# SamsungServiceMode
-PRODUCT_PACKAGES += \
-    SamsungServiceMode
-
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
