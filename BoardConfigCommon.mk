@@ -86,6 +86,9 @@ BOARD_HAVE_NEW_QC_GPS := true
 # Use retire fence from MDP driver
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
+# Code Aurora Media Variant
+TARGET_QCOM_MEDIA_VARIANT := caf
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
         device/samsung/msm8960-common/sepolicy
