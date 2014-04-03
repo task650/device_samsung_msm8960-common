@@ -24,9 +24,12 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 # Architecture
 TARGET_CPU_SMP := true
 
-# Flags
-COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64 -DNEW_ION_API
-
+# Flags for Krait CPU
+ifneq ($(VARIENT_REQUIRE_3.0_KERNEL),true)
+COMMON_GLOBAL_CFLAGS += -DNEW_ION_API
+endif
+TARGET_GLOBAL_CFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 TARGET_CPU_VARIANT := krait
 
 # Wifi related defines
@@ -67,6 +70,7 @@ COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Audio
+BOARD_HAVE_SAMSUNG_AUDIO := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_FLUENCE_INCALL := true
 BOARD_USES_FLUENCE_FOR_VOIP := true
@@ -83,11 +87,11 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 # We have the new GPS driver
 BOARD_HAVE_NEW_QC_GPS := true
 
+# Use CAF media driver variant for 8960
+TARGET_QCOM_MEDIA_VARIANT := caf
+
 # Use retire fence from MDP driver
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
-
-# Code Aurora Media Variant
-TARGET_QCOM_MEDIA_VARIANT := caf
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \

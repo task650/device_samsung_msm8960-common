@@ -57,7 +57,7 @@ camera_module_t HAL_MODULE_INFO_SYM = {
          version_major: 1,
          version_minor: 0,
          id: CAMERA_HARDWARE_MODULE_ID,
-         name: "d2-common Camera Wrapper",
+         name: "Samsung msm8960 Camera Wrapper",
          author: "The CyanogenMod Project",
          methods: &camera_module_methods,
          dso: NULL, /* remove compilation warnings */
@@ -118,17 +118,9 @@ static char * camera_fixup_getparams(int id, const char * settings)
 #ifdef PREVIEW_SIZE_FIXUP
     params.remove(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES);
     params.remove(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO);
-    if(id == 0) {
-        params.set(android::CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES, "1280x720,800x480,720x480,640x480,320x240,176x144");
-        params.set(android::CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,infinity,macro,fixed");
-        params.set(android::CameraParameters::KEY_SUPPORTED_SELECTABLE_ZONE_AF, "auto,spot-metering,center-weighted,frame-average");
-        params.set(android::CameraParameters::KEY_SUPPORTED_TOUCH_AF_AEC, "touch-off,touch-on");
-    } else {
-        params.set(android::CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES, "640x480,320x240,176x144");
-        params.set(android::CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "infinity");
-        params.set(android::CameraParameters::KEY_SUPPORTED_SELECTABLE_ZONE_AF, "");
-        params.set(android::CameraParameters::KEY_SUPPORTED_TOUCH_AF_AEC, "");
-        }
+#endif
+#ifdef VIDEO_PREVIEW_ALWAYS_MAX
+    params.set(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1920x1080");
 #endif
 
 #ifdef DISABLE_FACE_DETECTION
@@ -138,6 +130,8 @@ static char * camera_fixup_getparams(int id, const char * settings)
 #endif
         params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
         params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
+        params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
+        params.set(android::CameraParameters::KEY_SUPPORTED_FACE_DETECTION, "off");
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
     }
 #endif
@@ -181,17 +175,6 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
 #ifdef PREVIEW_SIZE_FIXUP
     params.remove(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES);
     params.remove(android::CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO);
-    if(id == 0) {
-        params.set(android::CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES, "1280x720,800x480,720x480,640x480,320x240,176x144");
-        params.set(android::CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "auto,infinity,macro,fixed");
-        params.set(android::CameraParameters::KEY_SUPPORTED_SELECTABLE_ZONE_AF, "auto,spot-metering,center-weighted,frame-average");
-        params.set(android::CameraParameters::KEY_SUPPORTED_TOUCH_AF_AEC, "touch-off,touch-on");
-    } else {
-        params.set(android::CameraParameters::KEY_SUPPORTED_PREVIEW_SIZES, "640x480,320x240,176x144");
-        params.set(android::CameraParameters::KEY_SUPPORTED_FOCUS_MODES, "infinity");
-        params.set(android::CameraParameters::KEY_SUPPORTED_SELECTABLE_ZONE_AF, "");
-        params.set(android::CameraParameters::KEY_SUPPORTED_TOUCH_AF_AEC, "");
-        }
 #endif
 
 #ifdef DISABLE_FACE_DETECTION
@@ -201,13 +184,17 @@ char * camera_fixup_setparams(struct camera_device * device, const char * settin
 #endif
         params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
         params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
+        params.set(android::CameraParameters::KEY_FACE_DETECTION, "off");
+        params.set(android::CameraParameters::KEY_SUPPORTED_FACE_DETECTION, "off");
 #ifndef DISABLE_FACE_DETECTION_BOTH_CAMERAS
     }
 #endif
 #endif
 
+#ifdef SAMSUNG_CAMERA_MODE
     /* Samsung camcorder mode */
     params.set(KEY_SAMSUNG_CAMERA_MODE, isVideo ? "1" : "0");
+#endif
 #ifdef ENABLE_ZSL
     params.set(android::CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
     params.set(android::CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");

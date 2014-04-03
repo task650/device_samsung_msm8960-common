@@ -55,16 +55,8 @@ PRODUCT_PACKAGES += \
     copybit.msm8960 \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
-    memtrack.msm8960 \
-    power.msm8960
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    e2fsck
-
-# DeviceSettings
-PRODUCT_PACKAGES += \
-    DeviceSettings
+    power.msm8960 \
+    memtrack.msm8960
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -105,10 +97,6 @@ PRODUCT_COPY_FILES += \
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
-
-# Props
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dexopt-data-only=0
 
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8960-common/overlay
